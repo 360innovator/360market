@@ -1,0 +1,12 @@
+{
+  "timestamp": "YYYY-MM-DDTHH:MM:SSZ",
+  "customer_id": "CUSTOMER_ID_HERE",
+  "bundle_id": "BUNDLE_CODE",
+  "price_pulled": 0.00,
+  "processed_kpis": {
+    "margin": 0.00,
+    "delivery_cost": 0.00,
+    "snap_multiplier": 0.00,
+    "bundle_passed": false
+  }
+}
