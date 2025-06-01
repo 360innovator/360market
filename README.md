@@ -23,3 +23,43 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 ## License
 
 This library is licensed under the MIT-0 License. See the LICENSE file.
+## Data Logger Architecture
+
+The project includes a simple data logger that records order and pricing information. Logs are stored in the `data/logger` directory.
+
+### System Diagram
+
+```mermaid
+graph TD
+    SNAP_Bundle[Customer Order: SNAP Bundle]
+    DataLogger[DATA LOGGER]
+    PriceAPI[Real-Time Grocery Price Feeds]
+    CostModule[COGS Breakdown Module]
+    ComparisonEngine[Comparison Engine]
+    KPIDashboard[LIVE KPI DASHBOARD]
+    GeminiAI[Gemini Validator]
+    DeepSeekAI[DeepSeek Optimizer]
+
+    SNAP_Bundle --> DataLogger
+    DataLogger --> CostModule
+    CostModule --> ComparisonEngine
+    PriceAPI --> ComparisonEngine
+    ComparisonEngine --> KPIDashboard
+    KPIDashboard --> GeminiAI
+    KPIDashboard --> DeepSeekAI
+```
+
+### Adding Logs
+
+1. Place JSON log files into `data/logger`. See `data/logger/README.md` for format details.
+2. Each log should capture the customer order, prices pulled from the API, and any processed KPI results.
+
+These logs can later be processed by analytics tools or uploaded to your data warehouse.
+
+### Dataset Layout
+The `data/logger` folder organizes raw data for analysis:
+- `raw_data/` – location metrics, orders, staffing, and financial CSVs
+- `trigger_logs/` – grant eligibility snapshots and investor signals
+- `quant_search/` – reference data from USDA, MBDA, and other funding searches
+
+See `docs/system_diagram.md` for how these datasets connect to the rest of the platform.
