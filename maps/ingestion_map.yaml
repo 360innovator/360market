@@ -1,0 +1,8 @@
+tables:
+  orders:
+    csv_columns:
+      - timestamp
+      - customer_id
+      - bundle_id
+      - price_pulled
+    schema: ../schemas/data_audit_schema.json
