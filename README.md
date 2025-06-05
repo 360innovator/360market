@@ -23,3 +23,20 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 ## License
 
 This library is licensed under the MIT-0 License. See the LICENSE file.
+
+## Local Datalogger
+
+This project includes a minimal file upload server for local development.
+
+### Running
+
+1. Install dependencies (requires network access):
+   ```bash
+   npm install
+   ```
+2. Start the datalogger:
+   ```bash
+   npm run datalogger
+   ```
+
+Files uploaded to the `/upload` endpoint will be stored in the `uploads/` folder.
