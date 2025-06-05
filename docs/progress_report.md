@@ -3,7 +3,7 @@
 This document tracks high-level progress on the data logger and related tooling.
 
 ## Current Status
-- **Base template**: repository initialized from the Amplify React+Vite starter.
+- **Base template**: repository was initialized from an Amplify React+Vite starter but is now being migrated to Firebase services.
 - **Data logger**: `data/logger` folder stores JSON logs with a documented schema.
 - **Architecture**: main `README.md` includes a system diagram showing how the data logger feeds KPI and AI modules.
 - **Blueprint**: `docs/enterprise_data_logger_blueprint.md` outlines a detailed design for an enterprise logger.

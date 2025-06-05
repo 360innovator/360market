@@ -1,20 +1,23 @@
-## AWS Amplify React+Vite Starter Template
+## Firebase React+Vite Starter Template
 
-This repository provides a starter template for creating applications using React+Vite and AWS Amplify, emphasizing easy setup for authentication, API, and database capabilities.
+This repository began as an AWS Amplify template but has since shifted to **Firebase** for all backend services. It still uses React+Vite on the front end while leveraging Firebase for authentication, database, and hosting.
 
 ## Overview
 
-This template equips you with a foundational React application integrated with AWS Amplify, streamlined for scalability and performance. It is ideal for developers looking to jumpstart their project with pre-configured AWS services like Cognito, AppSync, and DynamoDB.
+This template equips you with a foundational React application integrated with **Firebase**. It is ideal for developers looking to jumpstart their project with pre-configured Firebase services like Authentication, Firestore, and Cloud Functions.
 
 ## Features
 
-- **Authentication**: Setup with Amazon Cognito for secure user authentication.
-- **API**: Ready-to-use GraphQL endpoint with AWS AppSync.
-- **Database**: Real-time database powered by Amazon DynamoDB.
+- **Authentication**: Managed through Firebase Authentication.
+- **API**: Backend functionality can be implemented with Firebase Cloud Functions.
+- **Database**: Real-time data is stored in Firebase Firestore.
 
-## Deploying to AWS
+## Deploying to Firebase
 
-For detailed instructions on deploying your application, refer to the [deployment section](https://docs.amplify.aws/react/start/quickstart/#deploy-a-fullstack-app-to-aws) of our documentation.
+The original Amplify deployment workflow is no longer used. To deploy on Firebase:
+1. Install the Firebase CLI.
+2. Run `firebase init` to configure hosting and functions.
+3. Build the project with `npm run build` and deploy using `firebase deploy`.
 
 ## Security
 
@@ -60,3 +63,9 @@ For a detailed architecture overview, see [docs/enterprise_data_logger_blueprint
 ### Progress
 
 See [docs/progress_report.md](docs/progress_report.md) for a summary of current work and recommended next steps.
+
+### Legacy Amplify Files
+
+The repository still contains an `amplify` directory and `amplify.yml` from the
+original AWS setup. These are not used with the Firebase deployment and may be
+deleted if you do not plan to deploy on AWS.
