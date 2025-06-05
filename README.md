@@ -56,3 +56,6 @@ graph TD
 3. Run `python data/logger/validate_log.py` to ensure all log files match the expected schema before using them in other modules.
 
 These logs can later be processed by analytics tools or uploaded to your data warehouse.
+
+## Business Strategy
+Detailed strategy documents are maintained in [IPO_STRATEGY.md](docs/IPO_STRATEGY.md).
