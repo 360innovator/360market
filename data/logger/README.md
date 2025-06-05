@@ -49,3 +49,14 @@ python validate_log.py
 ```
 
 The script checks each JSON file in this directory for required fields and correct types. It prints `PASS` for valid logs or an error message describing any issues.
+
+## Summarizing Logs
+
+Use `summarize_logs.py` to aggregate KPI metrics across all logs and optionally generate a natural-language summary via the Gemini API.
+
+```bash
+# GEMINI_API_KEY must be set for LLM summarization
+python summarize_logs.py
+```
+
+The script outputs aggregated statistics and, if configured, a short Gemini-generated report.

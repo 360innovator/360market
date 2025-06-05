@@ -54,5 +54,6 @@ graph TD
 1. Place JSON log files into `data/logger`. See `data/logger/README.md` for format details.
 2. Each log should capture the customer order, prices pulled from the API, and any processed KPI results.
 3. Run `python data/logger/validate_log.py` to ensure all log files match the expected schema before using them in other modules.
+4. Optionally run `python data/logger/summarize_logs.py` to aggregate metrics and generate a brief Gemini-based summary.
 
 These logs can later be processed by analytics tools or uploaded to your data warehouse.
