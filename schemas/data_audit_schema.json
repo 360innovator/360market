@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Data Audit Log",
+  "type": "object",
+  "required": ["timestamp", "customer_id", "bundle_id", "price_pulled", "processed_kpis"],
+  "properties": {
+    "timestamp": {"type": "string", "format": "date-time"},
+    "customer_id": {"type": "string"},
+    "bundle_id": {"type": "string"},
+    "price_pulled": {"type": "number"},
+    "processed_kpis": {
+      "type": "object",
+      "required": ["margin", "delivery_cost", "snap_multiplier", "bundle_passed"],
+      "properties": {
+        "margin": {"type": "number"},
+        "delivery_cost": {"type": "number"},
+        "snap_multiplier": {"type": "number"},
+        "bundle_passed": {"type": "boolean"}
+      }
+    }
+  }
+}

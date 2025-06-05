@@ -1,0 +1,16 @@
+{
+  "auto_tag_rules": [
+    {
+      "field": "processed_kpis.margin",
+      "condition": "<",
+      "value": 0.2,
+      "tag": "low-margin"
+    }
+  ],
+  "prompt_execution": [
+    {
+      "trigger_tag": "low-margin",
+      "prompt_file": "sample_prompt.md"
+    }
+  ]
+}
