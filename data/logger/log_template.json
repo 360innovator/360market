@@ -1,5 +1,5 @@
 {
-  "timestamp": "YYYY-MM-DDTHH:MM:SSZ",
+  "timestamp": "2025-01-01T00:00:00Z",
   "customer_id": "CUSTOMER_ID_HERE",
   "bundle_id": "BUNDLE_CODE",
   "price_pulled": 0.00,

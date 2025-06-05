@@ -1,20 +1,32 @@
 import { useEffect, useState } from "react";
-import type { Schema } from "../amplify/data/resource";
-import { generateClient } from "aws-amplify/data";
+import { db } from "./firebase";
+import { collection, onSnapshot, addDoc } from "firebase/firestore";
 
-const client = generateClient<Schema>();
+interface Todo {
+  id: string;
+  content: string;
+}
 
 function App() {
-  const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   useEffect(() => {
-    client.models.Todo.observeQuery().subscribe({
-      next: (data) => setTodos([...data.items]),
+    const unsubscribe = onSnapshot(collection(db, "todos"), (snapshot) => {
+      setTodos(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...(doc.data() as Omit<Todo, "id">),
+        }))
+      );
     });
+    return unsubscribe;
   }, []);
 
   function createTodo() {
-    client.models.Todo.create({ content: window.prompt("Todo content") });
+    const content = window.prompt("Todo content");
+    if (content) {
+      addDoc(collection(db, "todos"), { content });
+    }
   }
 
   return (
@@ -26,13 +38,7 @@ function App() {
           <li key={todo.id}>{todo.content}</li>
         ))}
       </ul>
-      <div>
-        🥳 App successfully hosted. Try creating a new todo.
-        <br />
-        <a href="https://docs.amplify.aws/react/start/quickstart/#make-frontend-updates">
-          Review next step of this tutorial.
-        </a>
-      </div>
+      <div>Todo data is stored in Firebase Firestore.</div>
     </main>
   );
 }

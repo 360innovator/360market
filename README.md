@@ -1,20 +1,35 @@
-## AWS Amplify React+Vite Starter Template
+## Firebase React+Vite Starter Template
 
-This repository provides a starter template for creating applications using React+Vite and AWS Amplify, emphasizing easy setup for authentication, API, and database capabilities.
+This repository provides a starter template for creating applications using React+Vite with Firebase and Google Cloud.
 
 ## Overview
 
-This template equips you with a foundational React application integrated with AWS Amplify, streamlined for scalability and performance. It is ideal for developers looking to jumpstart their project with pre-configured AWS services like Cognito, AppSync, and DynamoDB.
+The template offers a basic React application integrated with Firebase. It is perfect for experimenting with Firebase Authentication and Firestore while keeping the codebase minimal.
 
 ## Features
 
-- **Authentication**: Setup with Amazon Cognito for secure user authentication.
-- **API**: Ready-to-use GraphQL endpoint with AWS AppSync.
-- **Database**: Real-time database powered by Amazon DynamoDB.
+- **Authentication**: Easily connect Firebase Authentication for secure sign-in.
+- **Database**: Real-time data storage using Cloud Firestore.
+- **Hosting**: Ready to deploy on Firebase Hosting or other Google Cloud platforms.
 
-## Deploying to AWS
+## Setup
 
-For detailed instructions on deploying your application, refer to the [deployment section](https://docs.amplify.aws/react/start/quickstart/#deploy-a-fullstack-app-to-aws) of our documentation.
+1. Create a `.env` file in the project root with your Firebase project configuration:
+
+```bash
+VITE_FIREBASE_API_KEY=<api key>
+VITE_FIREBASE_AUTH_DOMAIN=<auth domain>
+VITE_FIREBASE_PROJECT_ID=<project id>
+VITE_FIREBASE_STORAGE_BUCKET=<storage bucket>
+VITE_FIREBASE_MESSAGING_SENDER_ID=<messaging sender id>
+VITE_FIREBASE_APP_ID=<app id>
+```
+
+2. Install dependencies with `npm install` and start the development server:
+
+```bash
+npm run dev
+```
 
 ## Security
 
