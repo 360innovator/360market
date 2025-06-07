@@ -1,20 +1,20 @@
-## AWS Amplify React+Vite Starter Template
+## Azure Python Starter Template
 
-This repository provides a starter template for creating applications using React+Vite and AWS Amplify, emphasizing easy setup for authentication, API, and database capabilities.
+This repository provides a starter template for creating applications using Microsoft Azure services, emphasizing easy setup for authentication, API, and storage capabilities.
 
 ## Overview
 
-This template equips you with a foundational React application integrated with AWS Amplify, streamlined for scalability and performance. It is ideal for developers looking to jumpstart their project with pre-configured AWS services like Cognito, AppSync, and DynamoDB.
+This template equips you with a foundational Python application integrated with Azure, streamlined for scalability and performance. It is ideal for developers looking to jumpstart their project with pre-configured Azure resources.
 
 ## Features
 
-- **Authentication**: Setup with Amazon Cognito for secure user authentication.
-- **API**: Ready-to-use GraphQL endpoint with AWS AppSync.
-- **Database**: Real-time database powered by Amazon DynamoDB.
+- **Authentication**: Placeholder setup for Azure Active Directory integration.
+- **Storage**: Uses Azure Blob Storage for persisting data.
+- **Alerts**: Simple alert system that can be extended for Azure Monitor.
 
-## Deploying to AWS
+## Deploying to Azure
 
-For detailed instructions on deploying your application, refer to the [deployment section](https://docs.amplify.aws/react/start/quickstart/#deploy-a-fullstack-app-to-aws) of our documentation.
+Refer to the official Azure documentation for deployment steps tailored to your environment.
 
 ## Security
 
@@ -23,9 +23,10 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 ## License
 
 This library is licensed under the MIT-0 License. See the LICENSE file.
+
 ## Data Logger Architecture
 
-The project includes a simple data logger that records order and pricing information. Logs are stored in the `data/logger` directory.
+The project includes a simple data logger that records order and pricing information. Logs are stored in the `logs` directory.
 
 ### System Diagram
 
@@ -51,8 +52,7 @@ graph TD
 
 ### Adding Logs
 
-1. Place JSON log files into `data/logger`. See `data/logger/README.md` for format details.
+1. Place JSON log files into `logs`. See `logs/README.md` for format details.
 2. Each log should capture the customer order, prices pulled from the API, and any processed KPI results.
-3. Run `python data/logger/validate_log.py` to ensure all log files match the expected schema before using them in other modules.
 
 These logs can later be processed by analytics tools or uploaded to your data warehouse.
