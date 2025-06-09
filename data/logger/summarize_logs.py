@@ -66,8 +66,12 @@ def summarize_with_gemini(metrics: dict) -> str:
         "friendly report.\n" + json.dumps(metrics, indent=2)
     )
     model = genai.GenerativeModel("gemini-pro")
-    response = model.generate_content(prompt)
-    return response.text
+    try:
+        response = model.generate_content(prompt)
+        return response.text
+    except Exception as e:
+        # Optionally log the exception here, e.g. using logging.error(str(e))
+        return f"Failed to generate summary from Gemini API: {str(e)}"
 
 def main():
     metrics = load_logs()
