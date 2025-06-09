@@ -56,3 +56,18 @@ graph TD
 3. Run `python data/logger/validate_log.py` to ensure all log files match the expected schema before using them in other modules.
 
 These logs can later be processed by analytics tools or uploaded to your data warehouse.
+
+## Continuous Integration
+
+Log validation runs automatically via GitHub Actions. The workflow
+located at `.github/workflows/validate-logs.yml` executes
+`python data/logger/validate_log.py` whenever log files change. This
+prevents invalid logs from being merged.
+
+Run the script locally with:
+
+```bash
+python data/logger/validate_log.py
+# or on Windows PowerShell
+./scripts/validate_logs.ps1
+```
