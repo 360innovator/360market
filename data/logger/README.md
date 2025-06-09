@@ -1,6 +1,6 @@
 # Data Logger
 
-This directory stores operational logs used by the pricing and KPI system. Every log must be a JSON file that conforms to the schema below. Files that fail validation will be rejected by downstream modules.
+This directory stores operational logs used by the pricing and KPI system. Every log must be a JSON file that conforms to the schema below. Files that fail validation will be rejected by downstream modules. The validation script requires **Python 3.8+**.
 
 ## Required Fields
 
@@ -38,11 +38,13 @@ This directory stores operational logs used by the pricing and KPI system. Every
 }
 ```
 
-A starter template is provided in `log_template.json`.
+A starter template is provided in `log_template.json`. An additional example
+file, `example_log.json`, is included so you can immediately test the
+validation script.
 
 ## Validation
 
-Run `validate_log.py` to verify all log files:
+Run `validate_log.py` with **Python 3.8 or later** to verify all log files:
 
 ```bash
 python validate_log.py

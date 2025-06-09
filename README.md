@@ -12,6 +12,31 @@ This template equips you with a foundational React application integrated with A
 - **API**: Ready-to-use GraphQL endpoint with AWS AppSync.
 - **Database**: Real-time database powered by Amazon DynamoDB.
 
+## Installation & Usage
+
+### Frontend
+
+```bash
+npm install
+npm run dev
+```
+
+### Logger
+
+This repository requires **Python 3.8+** to run the logger and tests.
+
+Validate logs with:
+
+```bash
+python data/logger/validate_log.py
+```
+
+### Running Tests
+
+```bash
+pytest
+```
+
 ## Deploying to AWS
 
 For detailed instructions on deploying your application, refer to the [deployment section](https://docs.amplify.aws/react/start/quickstart/#deploy-a-fullstack-app-to-aws) of our documentation.
