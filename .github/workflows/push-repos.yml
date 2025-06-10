@@ -1,0 +1,18 @@
+name: Sync Mariner Repos
+
+on:
+  workflow_dispatch:
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup PowerShell
+        uses: PowerShell/PowerShell@v1
+      - name: Run sync script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: pwsh
+        run: ./scripts/push_repos.ps1

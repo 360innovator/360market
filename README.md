@@ -56,3 +56,7 @@ graph TD
 3. Run `python data/logger/validate_log.py` to ensure all log files match the expected schema before using them in other modules.
 
 These logs can later be processed by analytics tools or uploaded to your data warehouse.
+
+## Repository Sync
+
+A PowerShell script is provided in `scripts/push_repos.ps1` for pushing each Mariner module to its matching GitHub repository. A workflow in `.github/workflows/push-repos.yml` can run this script manually from GitHub Actions. Set the `GITHUB_TOKEN` secret before invoking the workflow or running the script locally.
