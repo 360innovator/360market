@@ -2,6 +2,16 @@
 
 This directory stores operational logs used by the pricing and KPI system. Every log must be a JSON file that conforms to the schema below. Files that fail validation will be rejected by downstream modules. The validation script requires **Python 3.8+**.
 
+## Installation
+
+Install Python dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
+The `summarize_logs.py` script depends on the `google-generativeai` package and requires the `GEMINI_API_KEY` environment variable for access to the Gemini API.
+
 ## Required Fields
 
 | Field | Type | Description |
