@@ -59,3 +59,23 @@ python data/logger/validate_log.py
 # or on Windows PowerShell
 ./scripts/validate_logs.ps1
 ```
+
+## Azure Deployment
+
+Automated deployments are configured with the GitHub Actions workflow
+located at `.github/workflows/azure.yml`. On each push to `main` the
+pipeline builds the React app, runs the Python tests, and uploads the
+contents of the `dist` folder to Azure Static Web Apps.
+
+Create the following repository secret to enable deployments:
+
+- `AZURE_STATIC_WEB_APPS_API_TOKEN` – deployment token for your Static Web App.
+
+Commit and push changes with:
+
+```bash
+./scripts/push_to_github.sh "your commit message" <repo-url>
+```
+
+The script stages all files, commits, optionally sets the remote, and
+pushes to the `main` branch.
